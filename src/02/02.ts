@@ -7,16 +7,16 @@ type AddressType = {
     street : StreetType
 }
 
-type HousesType = {
+export type HousesType = {
     buildedAt: number
     repaired: boolean
     address: AddressType
 }
 
 
-type GovernmentBuildingType2 = {
+export type GovernmentBuildingType2 = {
     type: 'HOSPITAL' | 'FIRE_STATION'
-    butget: number
+    budget: number
     staffCount: number
     address: AddressType
 
@@ -28,5 +28,6 @@ export type CityType = {
     governmentBuildings: Array<GovernmentBuildingType2>
     citizensNumber: number
 }
+
 
 

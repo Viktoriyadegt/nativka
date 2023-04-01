@@ -1,3 +1,5 @@
+import {CityType, GovernmentBuildingType2, HousesType} from "../02/02";
+
 export const student: StudentType = {
     id: 1,
     name: 'Dimych',
@@ -25,13 +27,13 @@ export const student: StudentType = {
         }
     ]
 }
-type CityType = {
+type LocalCityType = {
     title: string
     countryTitle: string
 }
 type AddressType = {
     streetTitle: string
-    city: CityType
+    city: LocalCityType
 }
 type TechnologiesType = {
     id: number
@@ -56,4 +58,29 @@ export function studentIsActive(student: StudentType) {
 
 export function doesStudentLiveIn(student: StudentType, cityName: string) {
     return student.address.city.title === cityName
+}
+
+export function addMoneyToBudget(governmentBuildings: GovernmentBuildingType2, countBudget: number) {
+    return governmentBuildings.budget += countBudget
+}
+
+// export function demolishHousesOnTheStreet(city:CityType, streetTitle: string){
+//     return  city.houses.filter((house)=>house.address.street.title!==streetTitle())
+// }
+
+export function repairHouse(house: HousesType) {
+    return house.repaired = true
+}
+
+export function toFireStaff(governmentBuilding:GovernmentBuildingType2, inc:number) {
+    return governmentBuilding.staffCount -= inc
+}
+
+export function toHireStaff(governmentBuilding:GovernmentBuildingType2, inc:number) {
+    return governmentBuilding.staffCount += inc
+}
+
+export function createMessage(city: CityType) {
+    return `Hello ${city.title} citizens. I want you be happy. All ${city.citizensNumber} men`
+
 }

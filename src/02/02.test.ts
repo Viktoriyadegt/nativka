@@ -40,7 +40,7 @@ beforeEach(() => {
         governmentBuildings: [
             {
                 type: 'HOSPITAL',
-                butget: 200000,
+                budget: 200000,
                 staffCount: 200,
                 address: {
                     street: {
@@ -50,7 +50,7 @@ beforeEach(() => {
             },
             {
                 type: 'FIRE_STATION',
-                butget: 500000,
+                budget: 500000,
                 staffCount: 1000,
                 address: {
                     street: {
@@ -93,12 +93,12 @@ test('test city should contains hospital and fire station', () => {
     expect(city.governmentBuildings.length).toBe(2);
 
     expect(city.governmentBuildings[0].type).toBe('HOSPITAL');
-    expect(city.governmentBuildings[0].butget).toBe(200000);
+    expect(city.governmentBuildings[0].budget).toBe(200000);
     expect(city.governmentBuildings[0].staffCount).toBe(200);
     expect(city.governmentBuildings[0].address.street.title).toBe('Central Str');
 
     expect(city.governmentBuildings[1].type).toBe('FIRE_STATION');
-    expect(city.governmentBuildings[1].butget).toBe(500000);
+    expect(city.governmentBuildings[1].budget).toBe(500000);
     expect(city.governmentBuildings[1].staffCount).toBe(1000);
     expect(city.governmentBuildings[1].address.street.title).toBe('South Str');
 
